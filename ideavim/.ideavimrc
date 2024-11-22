@@ -1,0 +1,114 @@
+"" Source your .vimrc
+"source ~/.vimrc
+"source ~/.config/nvim/init.vim
+let mapleader=" "
+
+set scrolloff=7
+set colorcolumn=79
+
+set so=10
+set nu
+
+set relativenumber
+
+set showmode
+set showcmd
+
+" system buffer
+set clipboard+=unnamed
+
+" search improve
+set ignorecase
+set hlsearch
+set incsearch
+nnoremap <esc><esc> :nohlsearch<CR>
+noremap <S-Y> "+y
+
+" Mappings ====================================
+" window
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+
+" cope find_files - find
+map <leader>fe <Action>(RecentFiles)
+map <leader>fp <Action>(FindInPath)
+map <leader>ff <Action>(FindSelectionInPath) " FindInPath ?
+map <leader>fu <Action>(FindUsages)
+map <leader>ff <Action>(GotoFile)
+map <leader>fc <Action>(GotoClass)
+map <leader>ft <Action>(TextSearchAction)
+map <leader>/ <Action>(Find)
+
+" p - project
+map <leader>pr <Action>(ExternalSystem.RefreshAllProjects)
+map <leader>ps <Action>(SelectInProjectView)
+map <leader>pv <Action>(IdeaVim.ReloadVimRc.reload)
+map <leader>pw <Action>(ActivateProjectToolWindow)
+
+" r - rename
+map <leader>r <Action>(RenameElement)
+
+" j - jump
+map <leader>jd <Action>(GotoDeclaration)
+map <leader>ji <Action>(GotoImplementation)
+map <leader>jt <Action>(GotoTest)
+map <leader>jb <Action>(Back)
+
+" r d - Run/Debug
+map <leader>cr <Action>(RunClass)
+map <leader>rr <Action>(Run)
+map <leader>dr <Action>(Debug)
+map <leader>dc <Action>(Console.Jdbc.Execute)
+
+" comment code
+map <leader>lk <Action>(CommentByLineComment)
+
+" Duplicate code
+map <leader>ld <Action>(EditorDuplicate)
+
+" breackpoint - build
+map <leader>b <Action>(ToggleLineBreakpoint)
+
+" format code
+map <leader>LL <Action>(ReformatCode)
+
+" z - zenMode
+map <leader>zz <Action>(ToggleZenMode)
+
+" k - search
+map <leader>k <Plug>(easymotion-s)
+
+" s - generate
+map <leader>sg <Action>(Generate)
+map <leader>sv <Action>(IntroduceVariable)
+map <leader>sm <Action>(ExtractMethod)
+map <leader>sc <Action>(IntroduceConstant)
+
+
+" Plugins =====================================
+set easymotion
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc

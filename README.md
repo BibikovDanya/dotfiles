@@ -35,6 +35,10 @@ https://github.com/junegunn/fzf
 ```
 brew install fzf 
 ```
+### bat 
+https://github.com/sharkdp/bat
+```
+```
 ### alacritty
 https://github.com/alacritty/alacritty/tree/master
 ```

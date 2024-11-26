@@ -13,7 +13,7 @@ import = [
 
 [font]
 normal = { family = "FiraCode Nerd Font"}
-size = 13
+size = 15
 
 
 [colors.primary]

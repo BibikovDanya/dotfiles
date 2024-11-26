@@ -158,11 +158,16 @@ alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 # alias pbcopy='xclip -selection clipboard'
 # alias pbpaste='xclip -selection clipboard -o'
-#alias -g xcopy='xclip -selection clipboard'
-#alias -g xpaste='xclip -selection clipboard -o'
+alias -g xcopy='xclip -selection clipboard'
+alias -g xpaste='xclip -selection clipboard -o'
 alias xcopy='pbcopy'
 alias xpaste='pbpaste'
 
+#alias bat='batcat'
+alias fzfb='fzf --preview "bat --color=always --style=numbers {}"'
+alias prv='fzf --preview "bat --color=always --style=numbers {}"'
+alias vi='nvim'
+alias viprv='nvim $(prv)'
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias py3='python3'

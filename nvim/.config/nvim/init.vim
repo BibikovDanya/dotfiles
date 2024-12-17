@@ -17,6 +17,11 @@ filetype indent on      " load filetype-specific indent files
 set termguicolors " использовать цвета терминала 
 set guifont="FiraCode Nerd Font" "fonts 
 
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=600})
+augroup END
+
 " search 
 set ignorecase " игнорирует регистр
 set smartcase " поиск со смешанным регистром

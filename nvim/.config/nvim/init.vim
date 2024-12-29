@@ -1,3 +1,9 @@
+"----------------------------------------------------------------------
+" Basic Options
+"----------------------------------------------------------------------
+
+let mapleader = " "
+
 set mouse=a  " enable mouse
 set encoding=utf-8
 set number
@@ -14,17 +20,41 @@ set autoindent
 set fileformat=unix
 filetype indent on      " load filetype-specific indent files
 
-set termguicolors " использовать цвета терминала 
+" Search settings
+set ignorecase  " Ignore casing of searches
+set smartcase " Be smart about case sensitivity when searching
+
+" GUI settings 
+syntax on
 set guifont="FiraCode Nerd Font" "fonts 
+" This is required to force 24-bit color since I use a modern terminal.
+set termguicolors " использовать цвета терминала 
 
 augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=600})
 augroup END
 
-" search 
-set ignorecase " игнорирует регистр
-set smartcase " поиск со смешанным регистром
+" themes 
+"colorscheme ayu
+"colorscheme gruvbox
+"colorscheme kanagawa-lotus
+"colorscheme  catppuccin "catppuccin catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+" go to `Catpuccin theme configuration`
+
+" Tab settings
+set smartindent " indentation depending on the code structure
+set tabstop=4 "Tabs width in spaces
+set expandtab " Expand tabs to the proper type and size
+set shiftwidth=2
+
+" Netrw file explorer settings
+let g:netrw_banner = 0 " hide banner above files
+let g:netrw_liststyle = 3 " tree instead of plain view
+let g:netrw_browse_split = 3 " vertical split window when Enter pressed on file
+
+" drafts 
+
 
 "Орфография для английского и русского языка
 "set spelllang=en,ru
@@ -37,29 +67,28 @@ set smartcase " поиск со смешанным регистром
 " set cursorline
 "set nostartofline
 "hi CursorLine cterm=underline
-"
+
+
+"----------------------------------------------------------------------
+" Key Mappings
+"----------------------------------------------------------------------
 " Системный буфер обмена shift - Y / P
 noremap <S-Y> "+y
-
-
-" Пролистнуть на страницу вниз 
-"nnoremap <Space> <PageDown> zz
-" Пролистнуть на страницу вверх
-"nnoremap k<Space> <PageUp> zz
-
-
-syntax on
-" look here  vim ~/.vimrc
-"source ~/.vimrc
-" for tabulation
-set smartindent
-set tabstop=2
-set expandtab
-set shiftwidth=2
+" Shortcut to yanking to the system clipboard
+map <leader>y "+y
+map <leader>p "+p
 
 inoremap jk <esc>
+inoremap jj <esc>
+inoremap jJ <esc>
+inoremap Jj <esc>
+inoremap JJ <esc>
+inoremap jk <esc>
+inoremap jK <esc>
+inoremap Jk <esc>
+inoremap JK <esc>
+
 " turn off search highlight
-"nnoremap ,<space> :nohlsearch<CR>
 nnoremap <esc><esc> :nohlsearch<CR>
 
 "перемещение выделенных элементов
@@ -68,15 +97,6 @@ vnoremap K :m '<-2<CR>gv=gv'
 " lua:
 "vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 "vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
-"
-
-let mapleader = " "
-
-" Netrw file explorer settings
-let g:netrw_banner = 0 " hide banner above files
-let g:netrw_liststyle = 3 " tree instead of plain view
-let g:netrw_browse_split = 3 " vertical split window when Enter pressed on file
-
 
 
 " for plug 
@@ -84,7 +104,7 @@ let g:netrw_browse_split = 3 " vertical split window when Enter pressed on file
 "map <Leader>k <Plug>(easymotion-k)
 map <Leader>k <Plug>(easymotion-s)
 
-" for telescope 
+" telescope 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -93,7 +113,17 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""PLUG
+" drafts 
+" Пролистнуть на страницу вниз 
+"nnoremap <Space> <PageDown> zz
+" Пролистнуть на страницу вверх
+"nnoremap k<Space> <PageUp> zz
+
+
+"----------------------------------------------------------------------
+" Plugin init
+"----------------------------------------------------------------------
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'neovim/nvim-lspconfig'
@@ -127,9 +157,6 @@ Plug 'nvim-lualine/lualine.nvim'
 "Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 " telescope 
-
-
-"
 Plug 'folke/which-key.nvim'
 
 " easymotion
@@ -146,14 +173,11 @@ call plug#end()
 
 
 
-"themes 
-"colorscheme ayu
-"colorscheme gruvbox
-"colorscheme kanagawa-lotus
-colorscheme  catppuccin-mocha  "catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
-"
+"----------------------------------------------------------------------
+" Plugin settings
+"----------------------------------------------------------------------
+
 " lualine https://github.com/nvim-lualine/lualine.nvim/blob/master/README.md
-"
 lua << END
 require('lualine').setup{
 options = { theme = 'catppuccin',
@@ -182,7 +206,6 @@ EOF
 
 
 lua << EOF
-
 -- luasnip setup
 local luasnip = require 'luasnip'
 --local async = require "plenary.async"
@@ -240,22 +263,23 @@ require'lspconfig'.pyright.setup{}
 EOF
 
 
-" Run Python and C files by Ctrl+h
-autocmd FileType python map <buffer> <C-h> :w<CR>:exec '!python3.10' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <C-h> <esc>:w<CR>:exec '!python3.10' shellescape(@%, 1)<CR>
 
-autocmd FileType c map <buffer> <C-h> :w<CR>:exec '!gcc' shellescape(@%, 1) '-o out; ./out'<CR>
-autocmd FileType c imap <buffer> <C-h> <esc>:w<CR>:exec '!gcc' shellescape(@%, 1) '-o out; ./out'<CR>
-
-autocmd FileType go map <buffer> <C-h> :w<CR>:exec '!go run' shellescape(@%, 1)<CR>
-autocmd FileType go imap <buffer> <C-h> <esc>:w<CR>:exec '!go run' shellescape(@%, 1)<CR>
-
-autocmd FileType sh map <buffer> <C-h> :w<CR>:exec '!bash' shellescape(@%, 1)<CR>
-autocmd FileType sh imap <buffer> <C-h> <esc>:w<CR>:exec '!bash' shellescape(@%, 1)<CR>
-
-autocmd FileType python set colorcolumn=88
-
-" Telescope fzf plugin
+" Telescope fzf plugin 
+"
 lua << EOF
 require('telescope').load_extension('fzf')
 EOF
+
+
+" Catpuccin theme configuration 
+"
+lua << EOF
+require("catppuccin").setup({
+    transparent_background = true,
+     term_colors = true,
+      show_end_of_buffer = true,
+})
+
+vim.cmd('colorscheme catppuccin')  
+EOF
+

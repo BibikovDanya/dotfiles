@@ -43,3 +43,11 @@ https://github.com/sharkdp/bat
 https://github.com/alacritty/alacritty/tree/master
 ```
 ```
+
+## Installation
+
+```
+git clone https://github.com/BibikovDanya/dotfiles.git
+cd dotfiles 
+stow nvim 
+```

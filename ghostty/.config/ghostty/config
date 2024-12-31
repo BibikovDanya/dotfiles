@@ -1,0 +1,8 @@
+theme = catppuccin-mocha
+# theme = GruvboxDark
+font-family = FiraCode Nerd Font
+font-size = 13
+background-opacity = 0.85
+gtk-titlebar = false
+
+keybind = ctrl+shift+a=toggle_tab_overview

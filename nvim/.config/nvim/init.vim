@@ -35,6 +35,13 @@ augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=600})
 augroup END
 
+
+" JSON
+let g:vim_json_syntax_conceal = 0
+
+" Default SQL type to PostgreSQL
+let g:sql_type_default = 'pgsql'
+
 " themes 
 "colorscheme ayu
 "colorscheme gruvbox

@@ -8,11 +8,10 @@ return {
     config = function()
       require("catppuccin").setup({
         transparent_background = true,
-	term_colors = true,
+        term_colors = true,
         show_end_of_buffer = true,
       })
       vim.cmd.colorscheme "catppuccin-mocha"
     end
   }
 }
-

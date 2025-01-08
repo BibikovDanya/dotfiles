@@ -7,18 +7,18 @@ vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, silent = true
 vim.keymap.set('n', '<esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
 
 local insert_mode_mappings = {
-    {"jk", "<Esc>"},
-    {"jj", "<Esc>"},
-    {"jJ", "<Esc>"},
-    {"Jj", "<Esc>"},
-    {"JJ", "<Esc>"},
-    {"jk", "<Esc>"},
-    {"jK", "<Esc>"},
-    {"Jk", "<Esc>"},
-    {"JK", "<Esc>"}
+  { "jk", "<Esc>" },
+  { "jj", "<Esc>" },
+  { "jJ", "<Esc>" },
+  { "Jj", "<Esc>" },
+  { "JJ", "<Esc>" },
+  { "jk", "<Esc>" },
+  { "jK", "<Esc>" },
+  { "Jk", "<Esc>" },
+  { "JK", "<Esc>" }
 }
 for _, mapping in ipairs(insert_mode_mappings) do
-    vim.api.nvim_set_keymap('i', mapping[1], mapping[2], { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('i', mapping[1], mapping[2], { noremap = true, silent = true })
 end
 
 -- Move highlighted blocks with J and K
@@ -35,7 +35,7 @@ vim.keymap.set("n", "<leader>ft", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
--- neo-tree 
+-- neo-tree
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal toggle left<CR>", {})
 vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal toggle float<CR>", {})
 

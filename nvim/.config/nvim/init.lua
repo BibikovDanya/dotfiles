@@ -6,11 +6,19 @@ vim.cmd('set number')
 vim.cmd('syntax on')
 vim.cmd('set guifont="FiraCode Nerd Font"')
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
+-- Tab settings
+vim.cmd("set smartindent") -- indentation depending on the code structure
+vim.cmd("set expandtab") --Expand tabs to the proper type and size
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=2")
 
+-- Search settings
+vim.cmd("set ignorecase") -- Ignore casing of searches
+vim.cmd("set smartcase") -- Be smart about case sensitivity when searching
+
+vim.cmd("set noswapfile")
+vim.cmd("set scrolloff=7")
 
 
 

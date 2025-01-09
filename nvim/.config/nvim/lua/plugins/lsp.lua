@@ -13,7 +13,8 @@ return {
           "lua_ls",
           "bashls",
           "jsonls",
-          "yamlls"
+          "yamlls",
+          "marksman"
         }
       })
     end
@@ -28,6 +29,7 @@ return {
       lspconfig.yamlls.setup({
         filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab" }
       })
+      lspconfig.marksman.setup({})
     end
   }
 }

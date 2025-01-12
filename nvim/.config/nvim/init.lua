@@ -1,13 +1,20 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+vim.o.termguicolors = true
+vim.opt.showmode = false -- Duplicated lualine
+vim.opt.cursorline = true
+
 vim.cmd('set mouse=a')
-vim.cmd('set relativenumber')
+vim.opt.relativenumber = true
 vim.cmd('set number')
 vim.cmd('syntax on')
 vim.cmd('set guifont="FiraCode Nerd Font"')
 
+
+
 -- Tab settings
-vim.cmd("set smartindent") -- indentation depending on the code structure
+vim.opt.smartindent = true -- indentation depending on the code structure
 vim.cmd("set expandtab") --Expand tabs to the proper type and size
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")

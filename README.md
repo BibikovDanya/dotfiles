@@ -1,36 +1,25 @@
-# dotfiles 
+# **My personal dotfiles** 
 
-## requirements 
+## **Requirements** 
 
-### git 
-https://git-scm.com
-### stow
-https://github.com/aspiers/stow
-### nvim
-https://github.com/neovim/neovim
-### zsh 
-https://www.zsh.org
-### oh-my-zsh 
-https://ohmyz.sh
-### starship
-https://starship.rs/guide/
-#### FiraCode Nerd Font
-https://www.nerdfonts.com/font-downloads
-### fzf 
-https://github.com/junegunn/fzf
-### bat 
-https://github.com/sharkdp/bat
-### alacritty
-https://github.com/alacritty/alacritty/tree/master
-### kitty
-https://sw.kovidgoyal.net/kitty/
-### ghostty 
-https://ghostty.org
+### Prerequisites
+    - [Nerd Font](https://www.nerdfonts.com/) installed and enabled in your terminal (for example, try the [FiraCode Nerd Font](https://www.nerdfonts.com/font-downloads)).
+    - Terminal emulator support 24-bit color. How to check: [Terminal Colors](https://github.com/termstandard/colors)
 
-## Installation
+### Dependencies (recommended, but not required)
+These dependencies are not strict requirements, but installing them can improve the functionality and usability of your environment. 
+- [stow](https://github.com/aspiers/stow)
+- [fzf](https://github.com/junegunn/fzf)
+- [bat](https://github.com/sharkdp/bat)
+- [oh-my-zsh](https://ohmyz.sh)
 
-```
+## **Installation**
+
+```bash
 git clone https://github.com/BibikovDanya/dotfiles.git
 cd dotfiles 
-stow nvim 
+stow nvim  
 ```
+## **Disclaimer**
+Code is constantly changing.
+

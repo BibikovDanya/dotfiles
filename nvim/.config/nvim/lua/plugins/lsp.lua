@@ -14,7 +14,8 @@ return {
           "bashls",
           "jsonls",
           "yamlls",
-          "marksman"
+          "marksman",
+          "jdtls"
         }
       })
     end
@@ -30,6 +31,7 @@ return {
         filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab" }
       })
       lspconfig.marksman.setup({})
+      lspconfig.jdtls.setup({})
     end
   }
 }

@@ -91,6 +91,11 @@ map <leader>sc <Action>(IntroduceConstant)
 set easymotion
 set highlightedyank
 
+set which-key
+set notimeout
+" increase the timeoutlen (default: 1000), don't add space around the equal sign
+set timeoutlen=5000
+
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.

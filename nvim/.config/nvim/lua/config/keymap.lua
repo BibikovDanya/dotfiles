@@ -43,6 +43,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 -- neo-tree
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal toggle left<CR>", {})
 vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal toggle float<CR>", {})
+vim.keymap.set("n", "<leader>gs", ":Neotree float git_status<CR>", {})
 
 -- vim-lspconfig
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

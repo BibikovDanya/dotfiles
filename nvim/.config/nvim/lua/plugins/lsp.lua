@@ -15,7 +15,9 @@ return {
           "jsonls",
           "yamlls",
           "marksman",
-          "jdtls"
+          "jdtls",
+          "sqlls",
+          "lemminx"
         }
       })
     end
@@ -32,6 +34,8 @@ return {
       })
       lspconfig.marksman.setup({})
       lspconfig.jdtls.setup({})
+      lspconfig.sqlls.setup({})
+      lspconfig.lemminx.setup {}
     end
   }
 }

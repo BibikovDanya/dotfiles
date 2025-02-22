@@ -24,6 +24,8 @@ set incsearch
 nnoremap <esc><esc> :nohlsearch<CR>
 noremap <S-Y> "+y
 
+inoremap jk <Esc>
+
 " Mappings ====================================
 " window
 map <C-l> <C-w>l
@@ -86,6 +88,9 @@ map <leader>sv <Action>(IntroduceVariable)
 map <leader>sm <Action>(ExtractMethod)
 map <leader>sc <Action>(IntroduceConstant)
 
+
+" a
+map <leader>A <Action>(Annotate)
 
 " Plugins =====================================
 set easymotion

@@ -37,5 +37,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
+--vim.wo.foldmethod = 'expr'
+--vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel = 99
+
 require("config.lazy")
 require("config.keymap")

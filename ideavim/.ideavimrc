@@ -3,6 +3,8 @@
 "source ~/.config/nvim/init.vim
 let mapleader=" "
 
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',ё\\,яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё/|
+
 set scrolloff=7
 set colorcolumn=79
 
@@ -23,8 +25,17 @@ set hlsearch
 set incsearch
 nnoremap <esc><esc> :nohlsearch<CR>
 noremap <S-Y> "+y
+" Shortcut to yanking to the system clipboard
+map <leader>y "+y
+map <leader>p "+p
+
 
 inoremap jk <Esc>
+
+" IDEA stuff
+set ideajoin
+set idearefactormode=keep
+set ideamarks
 
 " Mappings ====================================
 " window
@@ -32,6 +43,9 @@ map <C-l> <C-w>l
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
+
+map [d <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
 
 " cope find_files - find
 map <leader>fe <Action>(RecentFiles)
@@ -42,6 +56,7 @@ map <leader>ff <Action>(GotoFile)
 map <leader>fc <Action>(GotoClass)
 map <leader>ft <Action>(TextSearchAction)
 map <leader>/ <Action>(Find)
+"map <leader>f <Action>(Find)
 
 " p - project
 map <leader>pr <Action>(ExternalSystem.RefreshAllProjects)
@@ -52,17 +67,29 @@ map <leader>pw <Action>(ActivateProjectToolWindow)
 " r - rename
 map <leader>r <Action>(RenameElement)
 
-" j - jump
-map <leader>jd <Action>(GotoDeclaration)
-map <leader>ji <Action>(GotoImplementation)
-map <leader>jt <Action>(GotoTest)
-map <leader>jb <Action>(Back)
+" g - go
+map <leader>gd <Action>(GotoDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gt <Action>(GotoTest)
+map <leader>gb <Action>(Back)
 
 " r d - Run/Debug
 map <leader>cr <Action>(RunClass)
 map <leader>rr <Action>(Run)
 map <leader>dr <Action>(Debug)
 map <leader>dc <Action>(Console.Jdbc.Execute)
+
+" Test
+
+map <leader>ot <Action>(GotoTest)
+map <leader>ct <Action>(GenerateTestMethod)
+map <leader>C <Action>(Generate)
+map <leader>tt <Action>(RunClass)
+map <leader>T <Action>(Run)
+map <leader>td <Action>(Debug)
+
+" Completion
+imap <C-f> <Action>(CodeCompletion)
 
 " comment code
 map <leader>lk <Action>(CommentByLineComment)
@@ -72,9 +99,12 @@ map <leader>ld <Action>(EditorDuplicate)
 
 " breackpoint - build
 map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>Db <Action>(ToggleLineBreakpoint)
+map <leader>DB <Action>(ToggleLineBreakpoint)
 
 " format code
 map <leader>LL <Action>(ReformatCode)
+map <leader>l <Action>(ReformatCode)
 
 " z - zenMode
 map <leader>zz <Action>(ToggleZenMode)
@@ -91,6 +121,14 @@ map <leader>sc <Action>(IntroduceConstant)
 
 " a
 map <leader>A <Action>(Annotate)
+map <leader>a <Action>(ShowIntentionActions)
+
+map <leader>vr <Action>(IdeaVim.ReloadVimRc.reload)
+
+map <leader>e <Action>(ActivateProjectToolWindow)
+
+" Completion
+imap <C-f> <Action>(CodeCompletion)
 
 " Plugins =====================================
 set easymotion

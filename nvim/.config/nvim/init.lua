@@ -42,6 +42,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99
+vim.opt.splitright = true
 
 require("config.lazy")
 require("config.keymap")

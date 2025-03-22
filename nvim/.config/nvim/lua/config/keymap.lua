@@ -28,7 +28,7 @@ end
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
--- Open filebar   
+-- Open filebar
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 --------------- for plugins ---------------
@@ -52,3 +52,16 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 vim.keymap.set('n', '<space>re', vim.lsp.buf.rename, {})
+
+
+-- gitsigns
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+vim.keymap.set("n", "<leader>ga", ":Gitsigns toggle_current_line_blame<CR>", {})
+
+-- vim-test
+vim.keymap.set("n", "<leader>t", ":TestNearest<CR>", {})
+vim.keymap.set("n", "<leader>T", ":TestFile<CR>", {})
+vim.keymap.set("n", "<leader>a", ":TestSuite<CR>", {})
+vim.keymap.set("n", "<leader>l", ":TestLast<CR>", {})
+vim.keymap.set("n", "<leader>g", ":TestVisit<CR>", {})
+vim.cmd("let test#strategy = 'vimux'")

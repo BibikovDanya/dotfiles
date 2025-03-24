@@ -109,9 +109,6 @@ map <leader>l <Action>(ReformatCode)
 " z - zenMode
 map <leader>zz <Action>(ToggleZenMode)
 
-" k - search
-map <leader>k <Plug>(easymotion-s)
-
 " s - generate
 map <leader>sg <Action>(Generate)
 map <leader>sv <Action>(IntroduceVariable)
@@ -131,7 +128,6 @@ map <leader>e <Action>(ActivateProjectToolWindow)
 imap <C-f> <Action>(CodeCompletion)
 
 " Plugins =====================================
-set easymotion
 set highlightedyank
 
 set which-key

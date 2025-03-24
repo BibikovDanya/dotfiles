@@ -11,7 +11,7 @@ return {
         term_colors = true,
         show_end_of_buffer = true,
       })
-      vim.cmd.colorscheme "catppuccin-mocha"
+     -- vim.cmd.colorscheme "catppuccin-mocha"
     end
   }
 }

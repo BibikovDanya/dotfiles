@@ -8,3 +8,4 @@ background-blur-radius = 20
 gtk-titlebar = false
 
 keybind = ctrl+shift+a=toggle_tab_overview
+keybind = super+,=open_config

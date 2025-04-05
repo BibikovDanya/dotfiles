@@ -44,6 +44,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 
+vnoremap J :m '>+1<CR>gv=gv'
+vnoremap K :m '<-2<CR>gv=gv'
+
+
 map [d <Action>(GotoPreviousError)
 map ]d <Action>(GotoNextError)
 

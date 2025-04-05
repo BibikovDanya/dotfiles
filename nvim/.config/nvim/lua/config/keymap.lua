@@ -43,7 +43,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 -- neo-tree
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal toggle left<CR>", {})
 vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal toggle float<CR>", {})
-vim.keymap.set("n", "<leader>gs", ":Neotree float git_status<CR>", {})
+--vim.keymap.set("n", "<leader>gs", ":Neotree float git_status<CR>", {})
 
 -- vim-lspconfig
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -53,7 +53,8 @@ vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 vim.keymap.set('n', '<space>re', vim.lsp.buf.rename, {})
 
-
+-- fugitive
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 -- gitsigns
 vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 vim.keymap.set("n", "<leader>ga", ":Gitsigns toggle_current_line_blame<CR>", {})

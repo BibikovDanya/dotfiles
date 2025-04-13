@@ -12,6 +12,7 @@ These dependencies are not strict requirements, but installing them can improve 
 - [fzf](https://github.com/junegunn/fzf)
 - [bat](https://github.com/sharkdp/bat)
 - [oh-my-zsh](https://ohmyz.sh)
+- [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 ## **Installation**
 

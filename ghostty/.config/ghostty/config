@@ -6,6 +6,7 @@ background = #000000
 background-opacity = 0.75
 background-blur-radius = 20
 gtk-titlebar = false
+macos-titlebar-style = hidden
 
 keybind = ctrl+shift+a=toggle_tab_overview
 keybind = super+,=open_config

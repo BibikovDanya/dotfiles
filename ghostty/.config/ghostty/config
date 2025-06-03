@@ -1,11 +1,11 @@
 theme = catppuccin-mocha
 # theme = GruvboxDark
 font-family = FiraCode Nerd Font
-font-size = 13
+font-size = 14
 background = #000000 
 background-opacity = 0.75
 background-blur-radius = 20
-gtk-titlebar = false
+#gtk-titlebar = false
 macos-titlebar-style = hidden
 
 keybind = ctrl+shift+a=toggle_tab_overview

@@ -12,7 +12,6 @@ vim.cmd('syntax on')
 vim.cmd('set guifont="FiraCode Nerd Font"')
 
 
-
 -- Tab settings
 vim.opt.smartindent = true -- indentation depending on the code structure
 vim.cmd("set expandtab")   --Expand tabs to the proper type and size
@@ -36,14 +35,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
-})
+--vim.api.nvim_create_autocmd('LspAttach', {
+  --callback = function(ev)
+    --local client = vim.lsp.get_client_by_id(ev.data.client)
+    --if client:supports_method('textDocument/completion') then
+      --vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    --end
+  --end,
+--})
 
 
 --vim.wo.foldmethod = 'expr'
@@ -53,17 +52,18 @@ vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99
 vim.opt.splitright = true
 
-require("config.lazy")
-require("config.keymap")
+--require("config.lazy")
+--require("config.keymap")
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99
 vim.opt.splitright = true
 
-require("config.lazy")
-require("config.keymap")
-vim.opt.foldmethod = 'indent'
-vim.opt.foldlevel = 99
-vim.opt.splitright = true
+--require("config.lazy")
+--require("config.keymap")
+--vim.opt.foldmethod = 'indent'
+--vim.opt.foldlevel = 99
+--vim.opt.splitright = true
 
-require("config.lazy")
+require("core.lazy")
+require("core.lsp")
 require("config.keymap")

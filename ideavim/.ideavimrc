@@ -108,6 +108,7 @@ map <leader>DB <Action>(ToggleLineBreakpoint)
 
 " format code
 map <leader>LL <Action>(ReformatCode)
+map <leader>lf <Action>(Ktlint.Format)
 map <leader>l <Action>(ReformatCode)
 
 " z - zenMode

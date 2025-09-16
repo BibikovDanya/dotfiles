@@ -6,6 +6,9 @@ vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
 vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
 
+-- open dir tree
+vim.keymap.set('n', '<leader>e', ':Explore<CR>')
+
 -- highlighting of search results
 vim.keymap.set('n', '<esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
 
@@ -67,3 +70,7 @@ vim.keymap.set("n", "<leader>a", ":TestSuite<CR>", {})
 vim.keymap.set("n", "<leader>l", ":TestLast<CR>", {})
 vim.keymap.set("n", "<leader>g", ":TestVisit<CR>", {})
 vim.cmd("let test#strategy = 'vimux'")
+
+-- vim-commentary
+vim.keymap.set("n", "<leader>lk", ":Commentary<CR>", {})
+vim.keymap.set("v", "<leader>lk", ":Commentary<CR>", {})

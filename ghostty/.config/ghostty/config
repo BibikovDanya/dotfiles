@@ -1,12 +1,23 @@
-theme = catppuccin-mocha
-# theme = GruvboxDark
+##### ui 
+#theme = catppuccin-mocha
+#theme = GruvboxDark
+#theme = ENCOM
+theme = iTerm2 Default 
+
 font-family = FiraCode Nerd Font
 font-size = 14
+
 background = #000000 
-background-opacity = 0.80
+background-opacity = 0.70
 background-blur-radius = 20
+
 #gtk-titlebar = false
 macos-titlebar-style = hidden
 
+##### keybind
 keybind = ctrl+shift+a=toggle_tab_overview
 keybind = super+,=open_config
+
+
+#### other 
+shell-integration = zsh

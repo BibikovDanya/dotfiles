@@ -7,7 +7,7 @@ vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
 
 -- open dir tree
-vim.keymap.set('n', '<leader>e', ':Explore<CR>')
+vim.keymap.set('n', '<leader>E', ':Explore<CR>')
 
 -- highlighting of search results
 vim.keymap.set('n', '<esc>', ':nohlsearch<CR>', { noremap = true, silent = true })
@@ -45,6 +45,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
 -- neo-tree
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal toggle left<CR>", {})
+vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal toggle left<CR>", {})
 vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal toggle float<CR>", {})
 --vim.keymap.set("n", "<leader>gs", ":Neotree float git_status<CR>", {})
 

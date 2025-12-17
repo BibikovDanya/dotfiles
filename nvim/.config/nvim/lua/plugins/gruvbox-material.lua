@@ -15,6 +15,6 @@ return {
       term_colors = true,
       show_end_of_buffer = true,
     })
-    vim.cmd.colorscheme "gruvbox-material"
+    --vim.cmd.colorscheme "gruvbox-material"
   end
 }

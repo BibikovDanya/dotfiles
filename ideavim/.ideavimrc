@@ -120,6 +120,8 @@ map <leader>sv <Action>(IntroduceVariable)
 map <leader>sm <Action>(ExtractMethod)
 map <leader>sc <Action>(IntroduceConstant)
 
+" h
+map <leader>hh <Action>(LocalHistory.ShowHistory)
 
 " a
 map <leader>A <Action>(Annotate)

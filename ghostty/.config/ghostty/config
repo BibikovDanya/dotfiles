@@ -12,7 +12,9 @@ background-opacity = 0.70
 background-blur-radius = 20
 
 #gtk-titlebar = false
-macos-titlebar-style = hidden
+macos-titlebar-style = transparent
+#hidden native transparent
+
 
 ##### keybind
 keybind = ctrl+shift+a=toggle_tab_overview

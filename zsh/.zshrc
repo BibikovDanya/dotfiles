@@ -27,10 +27,6 @@ export K9S_CONFIG_DIR=$HOME/.config/k9s
 source $HOME/project/scripts/get_logs
 source $HOME/project/scripts/get_versions
 
-
-#enable startship https://starship.rs
-#go to g202
-
 ########## plugins
 plugins=(
 git
@@ -40,23 +36,6 @@ zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 ################################ aliases
 alias zshconfig="nvim ~/.zshrc"

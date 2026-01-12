@@ -7,7 +7,7 @@ export ZSH="$HOME/.oh-my-zsh"
 #postgresql
 export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
 
-## editor 
+## editor
 export KUBE_EDITOR="nvim"
 export EDITOR="nvim"
 
@@ -18,18 +18,18 @@ export PATH="~/.local/bin:$PATH"
 #export KUBECONFIG=/home/dbibikov/.kube/configs_d/rtng-test.yaml.conf:/home/dbibikov/.kube/configs_d/common-test01.yaml.conf:
 export KUBECONFIG=$HOME/.kube/configs_d/rtng-test.yaml.conf:$HOME/.kube/configs_d/common-test01.yaml.conf:
 
-## k9s 
+## k9s
 export K9S_CONFIG_DIR=$HOME/.config/k9s
 
 
-##scripts 
+##scripts
 #getlogs script
-source $HOME/project/scripts/get_logs 
+source $HOME/project/scripts/get_logs
 source $HOME/project/scripts/get_versions
 
 
-#enable startship https://starship.rs 
-#go to g202 
+#enable startship https://starship.rs
+#go to g202
 
 ########## plugins
 plugins=(
@@ -86,7 +86,7 @@ eval "$(starship init zsh)"
 # fzf
 source <(fzf --zsh)
 
-# few config nvim
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

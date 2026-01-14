@@ -10,8 +10,6 @@
 These dependencies are not strict requirements, but installing them can improve the functionality and usability of your environment. 
 - [stow](https://github.com/aspiers/stow)
 - [fzf](https://github.com/junegunn/fzf)
-- [bat](https://github.com/sharkdp/bat)
-- [oh-my-zsh](https://ohmyz.sh)
 - [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 ## **Installation**

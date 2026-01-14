@@ -1,8 +1,7 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+## cashe autocomplite
+autoload -Uz compinit
+compinit -C -u
 
 #postgresql
 export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
@@ -21,25 +20,17 @@ export KUBECONFIG=$HOME/.kube/configs_d/rtng-test.yaml.conf:$HOME/.kube/configs_
 ## k9s
 export K9S_CONFIG_DIR=$HOME/.config/k9s
 
+# fix default docker sock
+export DOCKER_CONTEXT=colima
 
 ##scripts
 #getlogs script
 source $HOME/project/scripts/get_logs
 source $HOME/project/scripts/get_versions
 
-########## plugins
-plugins=(
-git
-kubectl
-aws
-zsh-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
 
 ################################ aliases
 alias zshconfig="nvim ~/.zshrc"
-#alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias -g xcopy='xclip -selection clipboard'
 alias -g xpaste='xclip -selection clipboard -o'
 alias xcopy='pbcopy'
@@ -65,9 +56,35 @@ eval "$(starship init zsh)"
 # fzf
 source <(fzf --zsh)
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# zsh-syntax-highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-. "$HOME/.local/bin/env"
+# NVM
+export NVM_DIR="$HOME/.nvm"
+
+nvm() {
+    unset -f nvm node npm npx
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    nvm "$@"
+}
+
+node() {
+    unset -f nvm node npm npx
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    node "$@"
+}
+
+npm() {
+    unset -f nvm node npm npx
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    npm "$@"
+}
+
+npx() {
+    unset -f nvm node npm npx
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    npx "$@"
+}
+
+
+
